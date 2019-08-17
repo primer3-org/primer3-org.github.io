@@ -90,7 +90,6 @@ publications as<br>
 * Untergasser A, Cutcutache I, Koressaar T, Ye J, Faircloth BC, Remm M and Rozen SG.<br>
 Primer3--new capabilities and interfaces.<br>
 Nucleic Acids Res. 2012 Aug 1;40(15):e115.<br>
-<br>
 The paper is available at
 <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3424584/">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3424584/</a><br>
 <br>
@@ -98,10 +97,16 @@ and <br>
 <br>
 * Koressaar T and Remm M.<br>
 Enhancements and modifications of primer design program Primer3.<br>
-Bioinformatics 2007;23(10):1289-91.<br>
-<br>
-The papers is available at<br>
+Bioinformatics 2007;23(10):1289-1291.<br>
+The paper is available at
 <a href="https://www.ncbi.nlm.nih.gov/pubmed/17379693">https://www.ncbi.nlm.nih.gov/pubmed/17379693</a><br>
+<br>
+If you use masker function, please cite:<br>
+* Koressaar T, Lepamets M, Kaplinski L, Raime K, Andreson R and Remm M.<br>
+Primer3_masker: integrating masking of template sequence with primer design software.<br>
+Bioinformatics 2018;34(11):1937-1938.<br>
+The paper is available at
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/29360956">https://www.ncbi.nlm.nih.gov/pubmed/29360956</a><br>
 <br>
 Source code available at <a href="https://github.com/primer3-org/primer3">https://github.com/primer3-org/primer3</a>.</p>
 <h2><a id="licenseExplain">4. FAIR USE OF PRIMER3</a></h2>
@@ -464,17 +469,35 @@ following:<br>
 <br>
 The first option is just a shortcut to the second.</p>
 <h2><a id="installWindows">9. INSTALLATION INSTRUCTIONS - WINDOWS</a></h2>
+<p>Functionality warning<br>
+=====================<br>
+<br>
+The windows version does not support the masker functionality.
+</p>
 <p>How to install this software<br>
 ============================<br>
 <br>
-1. Unzip the '.zip' file downloaded from SourceForge.net<br>
-2. You will create a primer3-&lt;release&gt; folder in the location
-   where the file was unzipped<br>
-3. You may copy the files from the 'bin' directory of the
-   primer3-&lt;release&gt; folder to a location of your choice.
-   The exact same files are located within the 'src' folder
-   so that the tests may be run (windows does not allow
-   relative paths in shortcuts).<br>
+Get your copy of the source code<br>
+--------------------------------<br>
+1. Install Git for Windows from<br>
+   https://git-scm.com/download/win<br>
+2. Open Git for Windows and run<br>
+   git clone https://github.com/primer3-org/primer3.git<br>
+   cd primer3<br>
+3. Use git commands to obtain tagged version<br>
+   git tag<br>
+   git checkout tags/v2.3.7<br>
+or
+1. Download and unpack latest from<br>
+   https://github.com/primer3-org/primer3/releases<br>
+Compile Primer3<br>
+---------------<br>
+<br>
+1. Download and install TDM-GCC MinGW Compiler from<br>
+   https://sourceforge.net/projects/tdm-gcc/
+2. Open the windows command line and change to the src folder in
+   Primer3<br>
+3. Run: mingw32-make TESTOPTS=--windows<br>
 <br>
 Running the tests<br>
 =================<br>
@@ -504,7 +527,9 @@ known to work.<br>
 5. On the command line, run 'mingw32-make TESTOPTS=--windows' in this
    directory. You can also run the tests individually,
    for example 'perl p3test.pl --windows'.<br>
-6. You should see [OK] for all of the tests.<br>
+6. You should see [OK] for the majority of the tests. The masker
+   functionality is not supported on Windows and coresponding tests
+   will fail.<br>
 <br>
 Running the software<br>
 ====================<br>
